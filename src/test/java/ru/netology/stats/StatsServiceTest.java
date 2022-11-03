@@ -9,24 +9,23 @@ public class StatsServiceTest {
     @Test
     public void Sum() {
         StatsService service = new StatsService();
-        int[] sales = {
-                8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long [] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expected = 180;
-        int actual = service.Sum(sales);
+        long expected = 180;
+        long actual = service.sum(sales);
 
         Assertions.assertEquals(expected, actual);
 
     }
 
     @Test
-    public void AveregeSum() {
+    public void averegeSum() {
         StatsService service = new StatsService();
-        int[] sales = {
+        long [] sales = {
                 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        double expected = 15;
-        double actual = service.AveregeSum(sales);
+        long expected = 15;
+        long actual = service.averegeSum(sales);
 
         Assertions.assertEquals(expected, actual);
 
@@ -63,7 +62,7 @@ public class StatsServiceTest {
                 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 5;
-        int actual = service.MinAveregeSum(sales);
+        int actual = service.minAveregeSum(sales);
 
         Assertions.assertEquals(expected, actual);
     }
@@ -74,7 +73,7 @@ public class StatsServiceTest {
                 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 5;
-        int actual = service.MaxAveregeSum(sales);
+        int actual = service.maxAveregeSum(sales);
 
         Assertions.assertEquals(expected, actual);
     }

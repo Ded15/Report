@@ -2,31 +2,19 @@ package ru.netology.stats;
 
 
 public class StatsService {
-    int[] sales = {
-            8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
 
-    public int Sum(int[] sales) {
-        int month = sales.length;
-        int sum = 0;
-        for (int j = 0; j < sales.length; j++) {
-            sum = sum + sales[j];
+    public long sum(long[] sales) {
+        long sum = 0;
+        for (long sale : sales) {
+            sum += sale;
 
         }
         return sum;
-
     }
 
-    public double AveregeSum(int[] sales) {
-        double average = 0;
-        if (sales.length > 0) {
-            double sum = 0;
-            for (int j = 0; j < sales.length; j++) {
-                sum += sales[j];
-            }
-            average = sum / sales.length;
-        }
-        return average;
+    public long averegeSum(long[] sales) {
+        return sum(sales)/ 12;
     }
 
     public int maxSales(long[] sales) {
@@ -53,32 +41,22 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public int MinAveregeSum(long[] sales) {
-        double average = 0;
-        int sum = 0;
+    public int minAveregeSum(long[] sales) {
+        long avg = averegeSum(sales);
         int minAverege = 0;
-        for (int j = 0; j < sales.length; j++) {
-            sum += sales[j];
-        }
-        average = sum / sales.length;
-        for (int j = 0; j < sales.length; j++) {
-            if (sales[j] < average) {
+        for (long sale : sales) {
+            if (sale < avg) {
                 minAverege++;
             }
         }
         return minAverege;
     }
 
-    public int MaxAveregeSum(long[] sales) {
-        double average = 0;
-        int sum = 0;
+    public int maxAveregeSum(long[] sales) {
+        long avg = averegeSum(sales);
         int minAverege = 0;
-        for (int j = 0; j < sales.length; j++) {
-            sum += sales[j];
-        }
-        average = sum / sales.length;
-        for (int j = 0; j < sales.length; j++) {
-            if (sales[j] > average) {
+        for (long sale : sales) {
+            if (sale > avg) {
                 minAverege++;
             }
         }
